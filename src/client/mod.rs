@@ -387,7 +387,7 @@ where B: Stream<Error=::Error>,
     /// Construct the Client with this configuration.
     #[inline]
     pub fn build(self, handle: &Handle) -> Client<HttpConnector, B> {
-        self.connector(HttpConnector::new(4, handle)).build(handle)
+        self.connector(HttpConnector::new(40, handle)).build(handle)
     }
 }
 
